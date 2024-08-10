@@ -52,10 +52,12 @@ export default class List extends Component<any, any> {
 
   editItem = (index: any) => {
     const todos = [...this.state.list];
-    const editedTodo = prompt("Edit the todo:");
+    const editedTodo = prompt(`Edit the todo:`);
+
     if (editedTodo !== null && editedTodo.trim() !== "") {
       let updatedTodos = [...todos];
       updatedTodos[index].value = editedTodo;
+
       this.setState({
         list: updatedTodos,
       });
@@ -69,16 +71,22 @@ export default class List extends Component<any, any> {
           <Col md={{ span: 5, offset: 4 }}>
             <InputGroup className="mb-3">
               <FormControl
-                placeholder="add item . . . "
                 size="lg"
+                type="text"
+                className="form-control"
+                placeholder="Type here your new to-do item"
                 value={this.state.userInput}
                 onChange={(item) => this.updateInput(item.target.value)}
-                aria-label="add something"
-                aria-describedby="basic-addon2"
               />
-              <InputGroup>
-                <Button variant="dark" className="mt-2" onClick={() => this.addItem()}>
-                  ADD
+              <InputGroup style={{ justifyContent: "end" }}>
+                <Button
+                  disabled={this.state.userInput.length > 0 ? false : true}
+                  variant="dark"
+                  className="mt-2"
+                  onClick={() => this.addItem()}
+                >
+                  <i style={{ marginRight: "10px" }} className="bi bi-plus-circle"></i>
+                  Add
                 </Button>
               </InputGroup>
             </InputGroup>
@@ -86,30 +94,32 @@ export default class List extends Component<any, any> {
         </Row>
         <hr />
         <Row>
-          <Col md={{ span: 5, offset: 4 }}>
-            <ListGroup>
+          <Col md={{ span: 7, offset: 3 }}>
+            <ListGroup variant="flush">
               {this.state.list.map((item: any, index: any) => {
                 return (
                   <div key={index}>
-                    <ListGroup.Item
-                      variant="dark"
-                      action
-                      style={{ display: "flex", justifyContent: "space-between" }}
-                    >
+                    <ListGroup.Item variant="light" className="list-group-item">
                       {item.value}
                       <span>
                         <Button
-                          style={{ marginRight: "10px" }}
                           variant="light"
+                          className="item-btn"
+                          onClick={() => this.editItem(index)}
+                          style={{ marginRight: "10px" }}
+                        >
+                          <i className="bi bi-pencil-square"></i>
+                        </Button>
+                        <Button
+                          variant="light"
+                          className="item-btn"
                           onClick={() => this.deleteItem(item.id)}
                         >
-                          Delete
-                        </Button>
-                        <Button variant="light" onClick={() => this.editItem(index)}>
-                          Edit
+                          <i className="bi bi-trash"></i>
                         </Button>
                       </span>
                     </ListGroup.Item>
+                    <hr />
                   </div>
                 );
               })}

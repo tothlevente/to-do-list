@@ -1,0 +1,27 @@
+.form-control {
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  background-color: #f2f2f2;
+  color: #313131;
+  font-weight: bold;
+  border-width: 0cap;
+}
+
+.item-btn {
+  background-color: #f2f2f2;
+  border-width: 0cap;
+}
+
+.bi-star-fill {
+  color: #ff8c1a;
+}
+
+.bi-trash {
+  color: #ff1a1a;
+}
