@@ -1,4 +1,5 @@
 import { Component, ReactNode } from "react";
+
 import Logo from "./Logo";
 
 export default class Header extends Component {

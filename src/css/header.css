@@ -10,3 +10,8 @@
   align-items: center;
   gap: 5px;
 }
+
+.logo > h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
