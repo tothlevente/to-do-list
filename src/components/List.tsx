@@ -3,13 +3,15 @@ import { Component } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import ListState from "../interfaces/ListState";
+import ListProps from "../interfaces/ListProps";
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 
-export default class List extends Component<any, any> {
-  constructor(props: any) {
+export default class List extends Component<ListProps, ListState> {
+  constructor(props: ListProps) {
     super(props);
 
     this.state = {
@@ -18,7 +20,7 @@ export default class List extends Component<any, any> {
     };
   }
 
-  updateInput(value: any) {
+  updateInput(value: string) {
     this.setState({
       userInput: value,
     });
@@ -41,7 +43,7 @@ export default class List extends Component<any, any> {
     }
   }
 
-  deleteItem(key: any) {
+  deleteItem(key: number) {
     const list = [...this.state.list];
     const updateList = list.filter((item) => item.id !== key);
 
@@ -50,7 +52,7 @@ export default class List extends Component<any, any> {
     });
   }
 
-  editItem = (index: any) => {
+  editItem = (index: number) => {
     const todos = [...this.state.list];
     const editedTodo = prompt(`Edit the todo:`);
 
@@ -96,7 +98,7 @@ export default class List extends Component<any, any> {
         <Row>
           <Col md={{ span: 7, offset: 3 }}>
             <ListGroup variant="flush">
-              {this.state.list.map((item: any, index: any) => {
+              {this.state.list.map((item: ListProps, index: number) => {
                 return (
                   <div key={index}>
                     <ListGroup.Item variant="light" className="list-group-item">
