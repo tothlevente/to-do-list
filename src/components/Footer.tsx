@@ -9,17 +9,24 @@ export default class Footer extends Component {
           <p>This project (website) under MIT license, ad-free and does not use cookies.</p>
           <p>For more information please visit the project repository.</p>
         </div>
-        <a className="link" target="_blank" rel="noreferrer" href="https://github.com/tothlevente">
-          <i className="bi bi-person-circle"></i>
-        </a>
-        <a
-          className="link"
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/tothlevente/to-do-list"
-        >
-          <i className="bi bi-github"></i>
-        </a>
+        <div>
+          <a
+            className="link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/tothlevente"
+          >
+            <i className="bi bi-person-circle"></i>
+          </a>
+          <a
+            className="link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/tothlevente/to-do-list"
+          >
+            <i className="bi bi-github"></i>
+          </a>
+        </div>
       </footer>
     );
   }
