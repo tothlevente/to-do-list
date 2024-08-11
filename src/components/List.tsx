@@ -78,11 +78,11 @@ export default class List extends Component<any, any> {
                 value={this.state.userInput}
                 onChange={(item) => this.updateInput(item.target.value)}
               />
-              <InputGroup style={{ justifyContent: "end" }}>
+              <InputGroup style={{ justifyContent: "center" }}>
                 <Button
                   disabled={this.state.userInput.length > 0 ? false : true}
                   variant="dark"
-                  className="mt-2"
+                  className="mt-3 input-group-button"
                   onClick={() => this.addItem()}
                 >
                   <i style={{ marginRight: "10px" }} className="bi bi-plus-circle"></i>
@@ -100,11 +100,14 @@ export default class List extends Component<any, any> {
                 return (
                   <div key={index}>
                     <ListGroup.Item variant="light" className="list-group-item">
-                      {item.value}
+                      <div>
+                        <i className="bi bi-star-fill" style={{ paddingRight: "10px" }}></i>
+                        {item.value}
+                      </div>
                       <span>
                         <Button
                           variant="light"
-                          className="item-btn"
+                          className="item-btn pencil-btn"
                           onClick={() => this.editItem(index)}
                           style={{ marginRight: "10px" }}
                         >
@@ -112,7 +115,7 @@ export default class List extends Component<any, any> {
                         </Button>
                         <Button
                           variant="light"
-                          className="item-btn"
+                          className="item-btn trash-btn"
                           onClick={() => this.deleteItem(item.id)}
                         >
                           <i className="bi bi-trash"></i>
