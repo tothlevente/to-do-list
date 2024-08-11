@@ -25,3 +25,14 @@ footer {
 .link:hover {
   color: #4775d1;
 }
+
+@media (max-width: 650px) {
+  footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-text {
+    padding-bottom: 10px;
+  }
+}
