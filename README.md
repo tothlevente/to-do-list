@@ -2,6 +2,8 @@
 
 In this to-do list you can add new tasks and you can also delete the tasks by clicking on them.
 
+Be careful, your to-do list will be lost if you refresh or close the browser window.
+
 ## Available scripts:
 
 In the project directory, you can run:

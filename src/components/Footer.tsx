@@ -4,11 +4,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-text">
-        <p>
-          This website under MIT license, ad-free and does not use cookies only local storage to
-          improve your experience.
-        </p>
-        <p>You accept this when you use the website.</p>
+        <p>This website under MIT license, ad-free and does not use cookies.</p>
         <p>For more information please visit the project repository.</p>
         <p>Created by Levente in 2024</p>
         <p>v{packageJson.version}</p>
